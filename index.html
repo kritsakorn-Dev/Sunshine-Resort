@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sunshine Resort · Koh Kood</title>
+  <meta name="description" content="The Sunshine Resort — รีสอร์ทริมหาดอ่าวพร้าว เกาะกูด จังหวัดตราด สัมผัสทะเลใส หาดทรายขาว และความเงียบสงบที่ซ่อนตัวอยู่สุดปลายเกาะ" />
+  <link rel="icon" href="assets/site/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Page loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-sun"></span>
+      <p class="loader-text">THE&nbsp;SUNSHINE</p>
+      <div class="loader-bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar (floating glass pill) -->
+  <header class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="#home" class="brand">
+        <img src="assets/site/logo.png" alt="The Sunshine Resort Koh Kood" class="brand-logo" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#explore">Explore</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#booking" class="nav-cta" id="searchPill" data-magnetic>Book Now</a>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-img" data-parallax="0.18"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal">PRIVATE BEACH · AO PHRAO BAY</p>
+      <h1 class="hero-title">
+        <span class="line reveal">VISIT</span>
+        <span class="line outline reveal">KOH KOOD</span>
+      </h1>
+
+      <div class="hero-grid">
+        <p class="hero-desc reveal">
+          เกาะกูด คือเกาะสุดท้ายทางตะวันออกของไทย ในจังหวัดตราด
+          น้ำทะเลใสราวกระจก หาดทรายขาวละเอียด และธรรมชาติที่ยังบริสุทธิ์
+          The Sunshine Resort ซ่อนตัวอยู่ริมอ่าวพร้าว รอให้คุณมาค้นพบ
+        </p>
+        <p class="hero-desc reveal">
+          Wake up to crystal-clear water, fall asleep to the sound of the waves.
+          A hidden paradise on the southernmost bay of the island.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#booking" class="btn btn-primary" data-magnetic>Start Seeking
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <ul class="hero-menu reveal">
+        <li><a href="#booking">Schedule</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#explore">Tickets</a></li>
+        <li><a href="#contact">About</a></li>
+      </ul>
+    </div>
+
+    <a href="#booking" class="scroll-cue" aria-label="scroll down">
+      <span></span>Scroll
+    </a>
+  </section>
+
+  <!-- BOOKING BAR -->
+  <section class="booking" id="booking">
+    <div class="booking-card reveal">
+      <div class="booking-field">
+        <label>Check in</label>
+        <input type="date" id="checkin" />
+      </div>
+      <div class="booking-field">
+        <label>Check out</label>
+        <input type="date" id="checkout" />
+      </div>
+      <div class="booking-field">
+        <label>Guests</label>
+        <select id="guests">
+          <option>1 Adult</option>
+          <option selected>2 Adults</option>
+          <option>2 Adults · 1 Child</option>
+          <option>Family (3+)</option>
+        </select>
+      </div>
+      <div class="booking-field">
+        <label>Room</label>
+        <select id="roomtype">
+          <option>Single Seaview</option>
+          <option>Garden View</option>
+          <option>Family Room</option>
+        </select>
+      </div>
+      <button class="btn btn-primary booking-btn" data-magnetic id="checkBtn">Check Availability</button>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED / ROOMS -->
+  <section class="rooms" id="rooms">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal">RECOMMENDED PLACES TO STAY</p>
+        <h2 class="section-title reveal">Rooms &amp; <span>Rates</span></h2>
+      </div>
+      <p class="section-note reveal">ห้องพักทุกหลังอยู่ติดทะเล เพียงไม่กี่ก้าวถึงหาดส่วนตัวของรีสอร์ท</p>
+    </div>
+
+    <div class="room-grid">
+      <article class="room-card reveal" data-tilt>
+        <span class="room-rank">1st</span>
+        <div class="room-media" style="--img:url('assets/site/seaview-1.jpg')"></div>
+        <div class="room-body">
+          <h3>Single Seaview</h3>
+          <p>40–70 ม. จากหาด · King size · เพิ่มเตียงเสริมได้</p>
+          <div class="room-foot"><span class="price">฿1,500<small>/คืน</small></span><a href="#booking" class="room-link">Book →</a></div>
+        </div>
+      </article>
+
+      <article class="room-card reveal" data-tilt>
+        <span class="room-rank">2nd</span>
+        <div class="room-media" style="--img:url('assets/site/garden-1.jpg')"></div>
+        <div class="room-body">
+          <h3>Garden View</h3>
+          <p>30 ตร.ม. · ระเบียงวิวสวน · King / Twin bed</p>
+          <div class="room-foot"><span class="price">฿1,200<small>/คืน</small></span><a href="#booking" class="room-link">Book →</a></div>
+        </div>
+      </article>
+
+      <article class="room-card reveal" data-tilt>
+        <span class="room-rank">3rd</span>
+        <div class="room-media" style="--img:url('assets/site/family-1.png')"></div>
+        <div class="room-body">
+          <h3>Family Room</h3>
+          <p>34 ตร.ม. · พักได้ 3 ท่าน · King + Single bed</p>
+          <div class="room-foot"><span class="price">฿2,200<small>/คืน</small></span><a href="#booking" class="room-link">Book →</a></div>
+        </div>
+      </article>
+
+      <article class="room-card reveal" data-tilt>
+        <span class="room-rank">4th</span>
+        <div class="room-media" style="--img:url('assets/site/unseen-2.jpg')"></div>
+        <div class="room-body">
+          <h3>Beachfront Deck</h3>
+          <p>นั่งชิลริมทะเล · ชมพระอาทิตย์ตก · บาร์ &amp; อาหาร</p>
+          <div class="room-foot"><span class="price">Free<small>/guest</small></span><a href="#booking" class="room-link">View →</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section class="explore" id="explore">
+    <div class="explore-bg" data-parallax="0.12"></div>
+    <div class="explore-inner">
+      <div class="explore-copy">
+        <p class="eyebrow reveal">WHY MUST KOH KOOD?</p>
+        <h2 class="explore-title">
+          <span class="reveal">EXPLORE</span>
+          <span class="reveal outline">IT SELF</span>
+        </h2>
+        <p class="reveal">
+          เกาะกูดเต็มไปด้วยมุมมหัศจรรย์ที่รอให้คุณค้นพบ
+          ทั้งน้ำตกคลองเจ้า ป่าโกงกาง ดำน้ำดูปะการัง พายเรือคายัค
+          และหาดทรายขาวที่เงียบสงบราวกับเป็นของคุณคนเดียว
+        </p>
+        <p class="reveal muted">
+          From snorkeling over coral gardens to kayaking through mangroves and
+          chasing waterfalls — every moment here becomes unforgettable.
+        </p>
+        <a href="#gallery" class="btn btn-outline" data-magnetic>Find Out</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal"><b class="count" data-target="23">0</b><span>Room Units</span></div>
+        <div class="stat reveal"><b class="count" data-target="100" data-suffix="m">0</b><span>To the Beach</span></div>
+        <div class="stat reveal"><b class="count" data-target="12">0</b><span>Activities</span></div>
+        <div class="stat reveal"><b class="count" data-target="9" data-suffix=".4">0</b><span>Guest Rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SNORKELING ✺ DIVING ✺ KAYAKING ✺ ISLAND HOPPING ✺ WATERFALL ✺ SUNSET BAR ✺ MASSAGE ✺ PRIVATE BEACH ✺</span>
+      <span>SNORKELING ✺ DIVING ✺ KAYAKING ✺ ISLAND HOPPING ✺ WATERFALL ✺ SUNSET BAR ✺ MASSAGE ✺ PRIVATE BEACH ✺</span>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal">GALLERY &amp; UNSEEN SUNSHINE</p>
+        <h2 class="section-title reveal">Moments by <span>the Sea</span></h2>
+      </div>
+      <p class="section-note reveal">เลื่อนชมบรรยากาศจริงจากรีสอร์ท แล้วคุณจะเข้าใจว่าทำไมต้องมาเกาะกูด</p>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="g-item g-tall reveal" data-lightbox="assets/site/unseen-1.jpg" style="--img:url('assets/site/unseen-1.jpg')"><figcaption>Ao Phrao Bay</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/over-2.jpg" style="--img:url('assets/site/over-2.jpg')"><figcaption>Private Beach</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/over-5.jpg" style="--img:url('assets/site/over-5.jpg')"><figcaption>Resort Life</figcaption></figure>
+      <figure class="g-item g-wide reveal" data-lightbox="assets/site/home-3.jpg" style="--img:url('assets/site/home-3.jpg')"><figcaption>White Sand Beach</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/over-7.jpg" style="--img:url('assets/site/over-7.jpg')"><figcaption>Golden Hour</figcaption></figure>
+      <figure class="g-item g-tall reveal" data-lightbox="assets/site/home-2.jpg" style="--img:url('assets/site/home-2.jpg')"><figcaption>Sunset View</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta" id="contact">
+    <div class="cta-bg" data-parallax="0.1"></div>
+    <div class="cta-inner reveal">
+      <h2>Ready for your <span>escape?</span></h2>
+      <p>จองห้องพักหรือสอบถามเส้นทางเดินทางมาเกาะกูดได้เลย ทีมงานพร้อมดูแลคุณ</p>
+      <div class="cta-actions">
+        <a href="tel:+66898340124" class="btn btn-primary" data-magnetic>📞 +66 (0) 89 834 0124</a>
+        <a href="mailto:[email protected]" class="btn btn-outline" data-magnetic>✉ Email Us</a>
+      </div>
+      <div class="cta-meta">
+        <div><b>Address</b><span>62/3 Ao Phrao, Koh Kood Island, Trat, Thailand</span></div>
+        <div><b>Island Contact</b><span>+66 (0) 98 287 6112</span></div>
+        <div><b>Pier</b><span>15 km from Num Leuk · 25 km from Ao Salad</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="#home" class="brand footer-brand">
+        <img src="assets/site/logo.png" alt="The Sunshine Resort Koh Kood" class="brand-logo" />
+      </a>
+      <nav class="footer-links">
+        <a href="#rooms">Rooms &amp; Rates</a>
+        <a href="#explore">Activities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a href="#" aria-label="facebook">f</a>
+        <a href="#" aria-label="instagram">◎</a>
+        <a href="#" aria-label="line">L</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Sunshine Resort, Koh Kood.</span>
+      <span>Redesigned concept · Inspired by modern travel UI</span>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img src="" alt="gallery" id="lightboxImg" />
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
