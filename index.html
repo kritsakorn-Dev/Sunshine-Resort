@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Sunshine Resort · Koh Kood</title>
-  <meta name="description" content="The Sunshine Resort — a beachfront resort on Ao Phrao Bay, Koh Kood, Trat. Crystal-clear water, white sandy beach, and peaceful nature hidden at the far end of the island." />
+  <meta name="description" content="The Sunshine Resort — a beachfront sanctuary on Ao Phrao Bay, Koh Kood, Trat. Crystal-clear water, a 950-metre white sand beach, and untouched tropical wilderness." />
   <link rel="icon" href="assets/site/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -19,8 +19,7 @@
   <!-- Page loader -->
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <span class="loader-sun"></span>
-      <p class="loader-text">THE&nbsp;SUNSHINE</p>
+      <img src="assets/site/logo.png" alt="The Sunshine Resort" class="loader-logo" />
       <div class="loader-bar"><i></i></div>
     </div>
   </div>
@@ -28,254 +27,255 @@
   <!-- Scroll progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Navbar -->
+  <!-- Navbar (floating glass pill) -->
   <header class="nav" id="nav">
-    <a href="#home" class="brand">
-      <img src="assets/site/logo.png" alt="The Sunshine Resort Koh Kood" class="brand-logo" />
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="active">Home</a>
-      <a href="#rooms">Rooms</a>
-      <a href="#explore">Explore</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-right">
-      <a href="#booking" class="search-pill" id="searchPill" data-magnetic>
-        <span>Book Now</span>
-        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="nav-pill">
+      <a href="#home" class="brand">
+        <img src="assets/site/logo.png" alt="The Sunshine Resort Koh Kood" class="brand-logo" />
       </a>
-      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#rooms">Rooms &amp; Rates</a>
+        <a href="#experience">Facilities</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+      <div class="nav-right">
+        <button class="nav-search" id="searchPill" aria-label="search">
+          <svg viewBox="0 0 24 24" width="17" height="17"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <a href="#booking" class="btn btn-primary nav-cta" data-magnetic>Book Now</a>
+        <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <div class="hero-img" data-parallax="0.18"></div>
+      <div class="hero-img" data-parallax="0.14"></div>
       <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-content">
-      <p class="eyebrow reveal">PRIVATE BEACH · AO PHRAO BAY</p>
-      <h1 class="hero-title">
-        <span class="line reveal">Welcome</span>
-        <span class="line outline reveal">Sunshine Resort</span>
-      </h1>
+      <p class="eyebrow light reveal">Welcome to The Sunshine Resort · Koh Kood</p>
+      <h1 class="hero-title reveal">Escape to Paradise</h1>
+      <p class="hero-sub reveal">
+        Discover the untouched beauty of Ao Phrao Bay — a pristine sanctuary
+        where quiet luxury meets raw tropical wilderness.
+      </p>
+      <a href="#experience" class="btn btn-primary hero-btn reveal" data-magnetic>Explore Our Oasis</a>
+    </div>
 
-      <div class="hero-grid">
-        <p class="hero-desc reveal">
-          Koh Kood is the last island on Thailand's eastern coast, in Trat province.
-          Glass-clear waters, fine white sand, and pristine untouched nature.
-          The Sunshine Resort is tucked away along Ao Phrao Bay, waiting for you to discover.
+    <!-- Booking bar -->
+    <div class="booking" id="booking">
+      <div class="booking-card reveal">
+        <div class="booking-field">
+          <label>Check In</label>
+          <input type="date" id="checkin" />
+        </div>
+        <span class="booking-divider"></span>
+        <div class="booking-field">
+          <label>Check Out</label>
+          <input type="date" id="checkout" />
+        </div>
+        <span class="booking-divider"></span>
+        <div class="booking-field">
+          <label>Guests</label>
+          <select id="guests">
+            <option>1 Adult</option>
+            <option selected>2 Adults</option>
+            <option>2 Adults · 1 Child</option>
+            <option>Family (3+)</option>
+          </select>
+        </div>
+        <span class="booking-divider"></span>
+        <div class="booking-field">
+          <label>Room</label>
+          <select id="roomtype">
+            <option>Single Seaview</option>
+            <option>Garden View</option>
+            <option>Family Room</option>
+          </select>
+        </div>
+        <button class="btn btn-primary booking-btn" id="checkBtn" data-magnetic>
+          Search
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="exp-grid">
+      <div class="exp-copy">
+        <p class="eyebrow reveal">Ao Phrao Bay</p>
+        <h2 class="display reveal">The Experience</h2>
+        <p class="reveal">
+          Koh Kood is among the most pristine islands of Thailand. Situated in
+          Ao Phrao Bay, our perfect beachfront location offers direct access to a
+          beautiful 950-metre stretch of white sand and crystal-clear water.
         </p>
-        <p class="hero-desc reveal">
-          Wake up to crystal-clear water, fall asleep to the sound of the waves.
-          A hidden paradise on the southernmost bay of the island.
+        <p class="reveal muted">
+          Based on our family's intimate knowledge of the area, you are invited to
+          join our exclusive and unique "Unseen Sunshine" experience. Discover our
+          natural setting nestled among coconut groves and untouched jungle beyond.
         </p>
-        <div class="hero-actions reveal">
-          <a href="#booking" class="btn btn-primary" data-magnetic>Start Seeking
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+        <a href="#rooms" class="link-arrow reveal" data-magnetic>Discover More
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="exp-media reveal">
+        <img src="assets/site/home-2.jpg" alt="Colourful SUNSHINE pots in the resort garden" />
+        <div class="exp-badge">
+          <b class="count" data-target="950" data-suffix="m">0</b>
+          <span>White Sand Beach</span>
         </div>
       </div>
-
-      <ul class="hero-menu reveal">
-        <li><a href="#booking">Schedule</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#explore">Tickets</a></li>
-        <li><a href="#contact">About</a></li>
-      </ul>
-    </div>
-
-    <a href="#booking" class="scroll-cue" aria-label="scroll down">
-      <span></span>Scroll
-    </a>
-  </section>
-
-  <!-- BOOKING BAR -->
-  <section class="booking" id="booking">
-    <div class="booking-card reveal">
-      <div class="booking-field">
-        <label>Check in</label>
-        <input type="date" id="checkin" />
-      </div>
-      <div class="booking-field">
-        <label>Check out</label>
-        <input type="date" id="checkout" />
-      </div>
-      <div class="booking-field">
-        <label>Guests</label>
-        <select id="guests">
-          <option>1 Adult</option>
-          <option selected>2 Adults</option>
-          <option>2 Adults · 1 Child</option>
-          <option>Family (3+)</option>
-        </select>
-      </div>
-      <div class="booking-field">
-        <label>Room</label>
-        <select id="roomtype">
-          <option>Single Seaview</option>
-          <option>Garden View</option>
-          <option>Family Room</option>
-        </select>
-      </div>
-      <button class="btn btn-primary booking-btn" data-magnetic id="checkBtn">Check Availability</button>
     </div>
   </section>
 
-  <!-- RECOMMENDED / ROOMS -->
+  <!-- ROOMS & RATES -->
   <section class="rooms" id="rooms">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal">RECOMMENDED PLACES TO STAY</p>
-        <h2 class="section-title reveal">Rooms &amp; <span>Rates</span></h2>
-      </div>
-      <p class="section-note reveal">Every room sits right by the sea — just a few steps to the resort's private beach.</p>
+    <div class="section-head center">
+      <p class="eyebrow reveal">Stay With Us</p>
+      <h2 class="display reveal">Rooms &amp; Rates</h2>
+      <p class="section-note reveal">Three styles of room, all just a few steps from the resort's private beach.</p>
     </div>
 
     <div class="room-grid">
       <article class="room-card reveal" data-tilt>
-        <span class="room-rank">1st</span>
-        <div class="room-media" style="--img:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="room-media"><img src="assets/site/seaview-1.jpg" alt="Single Seaview Room" /></div>
         <div class="room-body">
-          <h3>Single Seaview</h3>
-          <p>40–70 m from the beach · King size · Extra bed available</p>
-          <div class="room-foot"><span class="price">฿1,500<small>/night</small></span><a href="#booking" class="room-link">Book →</a></div>
+          <div class="room-top"><h3>Single Seaview</h3><span class="price">฿1,500<small>/night</small></span></div>
+          <p>40–70 m from the beach · King size bed · Extra bed available</p>
+          <a href="#booking" class="link-arrow">Reserve
+            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
       <article class="room-card reveal" data-tilt>
-        <span class="room-rank">2nd</span>
-        <div class="room-media" style="--img:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="room-media"><img src="assets/site/garden-1.jpg" alt="Garden View Room" /></div>
         <div class="room-body">
-          <h3>Garden View</h3>
-          <p>30 sq.m. · Garden-view balcony · King / Twin bed</p>
-          <div class="room-foot"><span class="price">฿1,200<small>/night</small></span><a href="#booking" class="room-link">Book →</a></div>
+          <div class="room-top"><h3>Garden View</h3><span class="price">฿1,200<small>/night</small></span></div>
+          <p>30 sq.m. · Garden-view balcony · King or Twin bed</p>
+          <a href="#booking" class="link-arrow">Reserve
+            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
 
       <article class="room-card reveal" data-tilt>
-        <span class="room-rank">3rd</span>
-        <div class="room-media" style="--img:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="room-media"><img src="assets/site/home-4.jpg" alt="Family Room" /></div>
         <div class="room-body">
-          <h3>Family Room</h3>
+          <div class="room-top"><h3>Family Room</h3><span class="price">฿2,200<small>/night</small></span></div>
           <p>34 sq.m. · Sleeps 3 guests · King + Single bed</p>
-          <div class="room-foot"><span class="price">฿2,200<small>/night</small></span><a href="#booking" class="room-link">Book →</a></div>
-        </div>
-      </article>
-
-      <article class="room-card reveal" data-tilt>
-        <span class="room-rank">4th</span>
-        <div class="room-media" style="--img:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80')"></div>
-        <div class="room-body">
-          <h3>Beachfront Deck</h3>
-          <p>Relax by the sea · Watch the sunset · Bar &amp; dining</p>
-          <div class="room-foot"><span class="price">Free<small>/guest</small></span><a href="#booking" class="room-link">View →</a></div>
+          <a href="#booking" class="link-arrow">Reserve
+            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- EXPLORE -->
-  <section class="explore" id="explore">
-    <div class="explore-bg" data-parallax="0.12"></div>
-    <div class="explore-inner">
-      <div class="explore-copy">
-        <p class="eyebrow reveal">WHY MUST KOH KOOD?</p>
-        <h2 class="explore-title">
-          <span class="reveal">EXPLORE</span>
-          <span class="reveal outline">IT SELF</span>
-        </h2>
-        <p class="reveal">
-          Koh Kood is full of wonders waiting to be discovered —
-          Klong Chao Waterfall, mangrove forests, coral snorkeling, kayaking,
-          and tranquil white-sand beaches that feel like they're all yours.
-        </p>
-        <p class="reveal muted">
-          From snorkeling over coral gardens to kayaking through mangroves and
-          chasing waterfalls — every moment here becomes unforgettable.
-        </p>
-        <a href="#gallery" class="btn btn-outline" data-magnetic>Find Out</a>
+  <!-- OUR STORY / LOCATION -->
+  <section class="story" id="location">
+    <div class="story-top">
+      <div class="story-media reveal">
+        <img src="assets/site/over-10.jpg" alt="Kayaks resting on Ao Phrao beach" />
       </div>
+      <div class="story-copy reveal">
+        <p class="eyebrow">Island Life</p>
+        <p class="lead">
+          Experience the gentle rhythm of daily life among friendly locals.
+          Nearby you'll find a serene temple, a local school, and a traditional
+          fisherman's village — where you can watch life unfold along the surrounding waters.
+        </p>
+        <ul class="story-facts">
+          <li><b>15 km</b><span>from Num Leuk Pier</span></li>
+          <li><b>25 km</b><span>from Ao Salad Pier</span></li>
+          <li><b>950 m</b><span>private white sand beach</span></li>
+        </ul>
+      </div>
+    </div>
 
-      <div class="stats">
-        <div class="stat reveal"><b class="count" data-target="23">0</b><span>Room Units</span></div>
-        <div class="stat reveal"><b class="count" data-target="100" data-suffix="m">0</b><span>To the Beach</span></div>
-        <div class="stat reveal"><b class="count" data-target="12">0</b><span>Activities</span></div>
-        <div class="stat reveal"><b class="count" data-target="9" data-suffix=".4">0</b><span>Guest Rating</span></div>
+    <div class="story-bottom" id="story">
+      <div class="story-text reveal">
+        <h2 class="display">Our Story</h2>
+        <p>
+          Built in 2009, The Sunshine Resort is a sanctuary run by a family who has
+          lived here for generations. We pride ourselves on a warm welcome and tasty
+          local food, with freshly caught seafood among the specialities. It's an
+          authentic taste of island life, passed down through our heritage.
+        </p>
+      </div>
+      <div class="story-thumbs reveal">
+        <img src="assets/site/over-2.jpg" alt="Garden bungalow surrounded by greenery" data-lightbox="assets/site/over-2.jpg" />
+        <img src="assets/site/over-4.jpg" alt="Beachfront restaurant terrace" data-lightbox="assets/site/over-4.jpg" />
       </div>
     </div>
   </section>
 
-  <!-- ACTIVITIES MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>SNORKELING ✺ DIVING ✺ KAYAKING ✺ ISLAND HOPPING ✺ WATERFALL ✺ SUNSET BAR ✺ MASSAGE ✺ PRIVATE BEACH ✺</span>
-      <span>SNORKELING ✺ DIVING ✺ KAYAKING ✺ ISLAND HOPPING ✺ WATERFALL ✺ SUNSET BAR ✺ MASSAGE ✺ PRIVATE BEACH ✺</span>
-    </div>
-  </div>
-
-  <!-- GALLERY -->
+  <!-- UNSEEN SUNSHINE GALLERY -->
   <section class="gallery" id="gallery">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal">GALLERY &amp; UNSEEN SUNSHINE</p>
-        <h2 class="section-title reveal">Moments by <span>the Sea</span></h2>
-      </div>
-      <p class="section-note reveal">Scroll through real moments from the resort and you'll see why Koh Kood is a must-visit.</p>
+    <div class="section-head center">
+      <p class="eyebrow reveal">Gallery</p>
+      <h2 class="display reveal">Unseen Sunshine</h2>
+      <p class="section-note reveal">Moments most travellers never get to see — from starlit skies to hidden bays.</p>
     </div>
 
     <div class="gallery-grid">
-      <figure class="g-item g-tall reveal" data-lightbox="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=1400&q=80" style="--img:url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=800&q=80')"><figcaption>Ao Phrao Bay</figcaption></figure>
-      <figure class="g-item reveal" data-lightbox="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1400&q=80" style="--img:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80')"><figcaption>Coral Reef</figcaption></figure>
-      <figure class="g-item reveal" data-lightbox="https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=1400&q=80" style="--img:url('https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=800&q=80')"><figcaption>Kayaking</figcaption></figure>
-      <figure class="g-item g-wide reveal" data-lightbox="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" style="--img:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1100&q=80')"><figcaption>White Sand Beach</figcaption></figure>
-      <figure class="g-item reveal" data-lightbox="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1400&q=80" style="--img:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80')"><figcaption>Golden Hour</figcaption></figure>
-      <figure class="g-item g-tall reveal" data-lightbox="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=80" style="--img:url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=80')"><figcaption>Sunset View</figcaption></figure>
+      <figure class="g-item g-tall reveal" data-lightbox="assets/site/unseen-2.jpg"><img src="assets/site/unseen-2.jpg" alt="Hidden turquoise bay" loading="lazy" /><figcaption>Hidden Bay</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/over-7.jpg"><img src="assets/site/over-7.jpg" alt="Thatched sala by the sea" loading="lazy" /><figcaption>Beach Sala</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/over-9.jpg"><img src="assets/site/over-9.jpg" alt="Red sun loungers on the beach" loading="lazy" /><figcaption>Sun Loungers</figcaption></figure>
+      <figure class="g-item g-wide reveal" data-lightbox="assets/site/home-3.jpg"><img src="assets/site/home-3.jpg" alt="Palm-fringed white sand beach" loading="lazy" /><figcaption>White Sand Beach</figcaption></figure>
+      <figure class="g-item reveal" data-lightbox="assets/site/unseen-1.jpg"><img src="assets/site/unseen-1.jpg" alt="Starry night sky over the bay" loading="lazy" /><figcaption>Night Sky</figcaption></figure>
+      <figure class="g-item g-tall reveal" data-lightbox="assets/site/over-5.jpg"><img src="assets/site/over-5.jpg" alt="Sunset over the sea" loading="lazy" /><figcaption>Golden Hour</figcaption></figure>
     </div>
   </section>
 
-  <!-- CTA / CONTACT -->
-  <section class="cta" id="contact">
-    <div class="cta-bg" data-parallax="0.1"></div>
-    <div class="cta-inner reveal">
-      <h2>Ready for your <span>escape?</span></h2>
-      <p>Book your stay or ask us about getting to Koh Kood — our team is ready to take care of you.</p>
-      <div class="cta-actions">
-        <a href="tel:+66898340124" class="btn btn-primary" data-magnetic>📞 +66 (0) 89 834 0124</a>
-        <a href="mailto:[email protected]" class="btn btn-outline" data-magnetic>✉ Email Us</a>
-      </div>
-      <div class="cta-meta">
-        <div><b>Address</b><span>62/3 Ao Phrao, Koh Kood Island, Trat, Thailand</span></div>
-        <div><b>Island Contact</b><span>+66 (0) 98 287 6112</span></div>
-        <div><b>Pier</b><span>15 km from Num Leuk · 25 km from Ao Salad</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-top">
-      <a href="#home" class="brand footer-brand">
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand">
         <img src="assets/site/logo.png" alt="The Sunshine Resort Koh Kood" class="brand-logo" />
-      </a>
-      <nav class="footer-links">
+        <p class="footer-addr">62/3 The Sunshine Resort, Ko Kood Island, Trat, Thailand.</p>
+        <p class="footer-note">A perfect beachfront location with direct access to a beautiful 950-metre long white sand beach.</p>
+        <div class="socials">
+          <a href="#" aria-label="facebook">f</a>
+          <a href="#" aria-label="messenger">◍</a>
+          <a href="#" aria-label="line">L</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
         <a href="#rooms">Rooms &amp; Rates</a>
-        <a href="#explore">Activities</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="socials">
-        <a href="#" aria-label="facebook">f</a>
-        <a href="#" aria-label="instagram">◎</a>
-        <a href="#" aria-label="line">L</a>
+        <a href="#gallery">Gallery &amp; Unseen Sunshine</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Reservations</h4>
+        <a href="tel:+66898340124">+66 (0) 89 834 0124</a>
+        <a href="tel:+66982876112">+66 (0) 98 287 6112 (Island)</a>
+        <a href="mailto:[email protected]">[email protected]</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© 2026 The Sunshine Resort, Koh Kood.</span>
-      <span>Redesigned concept · Inspired by modern travel UI</span>
+      <span>© 2024 The Sunshine Resort Koh Kood. All rights reserved.</span>
+      <span>Redesigned concept · Inspired by modern luxury travel UI</span>
     </div>
   </footer>
 

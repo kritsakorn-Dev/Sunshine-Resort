@@ -1,9 +1,10 @@
 # 🌅 The Sunshine Resort — Koh Kood (Redesign Concept)
 
 A **website redesign** project for [The Sunshine Resort](https://www.thesunshineresortkokut.com/),
-a beachfront resort on Ao Phrao Bay, Koh Kood, Trat. It reimagines the original site with a more
-**modern** look, a **cinematic dark theme** in sunset tones (red–orange), and plenty of
-**interactive touches** for visitors.
+a beachfront resort on Ao Phrao Bay, Koh Kood, Trat. It reimagines the original site as an
+**elegant, editorial luxury experience** — an airy dark theme with **serif display typography**,
+sunset-red accents, a floating glass navigation bar, and plenty of **interactive touches**.
+All photography uses the **resort's own real images**.
 
 > A **static, single-page website** written in pure HTML + CSS + JavaScript.
 > No build step, no dependencies to install — just open the file and it works.
@@ -30,8 +31,8 @@ a beachfront resort on Ao Phrao Bay, Koh Kood, Trat. It reimagines the original 
 | **Markup** | HTML5 | Semantic tags (`header`, `section`, `nav`, `figure`, `footer`) |
 | **Styling** | CSS3 | Custom Properties (`:root` variables), Flexbox, CSS Grid, `backdrop-filter`, Keyframe Animations |
 | **Behavior** | JavaScript (Vanilla ES6+) | No framework / no external libraries |
-| **Fonts** | Google Fonts | `Anton`, `Bebas Neue`, `Poppins`, `Noto Sans Thai` |
-| **Images** | Real resort photos + Unsplash | See [Image Sources](#-image-sources) |
+| **Fonts** | Google Fonts | `Playfair Display` (serif headings), `Jost` (sans body/nav) |
+| **Images** | 100% real resort photos | See [Image Sources](#-image-sources) |
 
 **Not used:** Node.js, npm, bundlers (Webpack/Vite), CSS frameworks (Bootstrap/Tailwind) or JS frameworks (React/Vue).
 This keeps the project **lightweight, easy to run, and easy to maintain.**
@@ -41,14 +42,13 @@ This keeps the project **lightweight, easy to run, and easy to maintain.**
 ## ✨ Key Features
 
 ### Page Sections
-1. **Hero** — Large "VISIT KOH KOOD" typography over a real beach photo with a parallax effect
-2. **Booking Bar** — Pick check-in/check-out dates, number of guests, and room type
-3. **Rooms & Rates** — Ranked room cards (1st–4th) with a 3D tilt effect
-4. **Explore It Self** — Statistics that count up automatically (animated counters)
-5. **Activities Marquee** — A scrolling text strip of resort activities
-6. **Gallery** — Masonry image grid; click to view full-size images (Lightbox)
-7. **Contact / CTA** — The resort's real contact information
-8. **Footer** — Real logo + links + social icons
+1. **Hero** — Centered "Escape to Paradise" serif headline over a real beach photo, with parallax and an overlapping booking bar
+2. **Booking Bar** — Pick check-in/check-out dates, guests, and room type, then Search
+3. **The Experience** — Editorial two-column intro with the real "SUNSHINE" garden photo and a "950 m beach" badge (animated counter)
+4. **Rooms & Rates** — Three room cards (Single Seaview, Garden View, Family) with real interiors and a 3D tilt effect
+5. **Our Story / Location** — Family heritage story, island-life details, and pier distances with real photos
+6. **Unseen Sunshine (Gallery)** — Masonry image grid; click to view full-size images (Lightbox)
+7. **Footer / Contact** — Real logo, address, Quick Links, Legal, reservations, and social icons
 
 ### Interactions — found in `js/script.js`
 - 🖱️ **Custom Cursor** — A custom cursor (dot + ring following the mouse)
@@ -139,8 +139,9 @@ Edit the variables in the `:root` block of `css/style.css`:
 ```
 
 ### Change the images
-- **Hero / Explore / CTA images** → edit `css/style.css` in the `.hero-img`, `.explore-bg`, `.cta-bg` classes
-- **Room / Gallery images** → edit `index.html` in the `style="--img:url('...')"` and `data-lightbox="..."` attributes
+- **Hero background** → edit `css/style.css` in the `.hero-img` class (`background:url(...)`)
+- **Section / room / gallery images** → edit the `<img src="...">` tags (and `data-lightbox="..."`) directly in `index.html`
+- All images live in `assets/site/` — drop in new files and update the paths
 
 ### Change content / text
 Edit directly in `index.html` (text, prices, contact info, etc.)
@@ -149,14 +150,20 @@ Edit directly in `index.html` (text, prices, contact info, etc.)
 
 ## 🖼️ Image Sources
 
-| Section | Source |
-|---------|--------|
-| **Logo + favicon** | Real images from [thesunshineresortkokut.com](https://www.thesunshineresortkokut.com/) |
-| **Hero (main background)** | Real photo — `assets/site/home-1.jpg` (Ao Phrao Bay beach at sunset) |
-| **Rooms / Gallery / Explore / CTA** | Photos from [Unsplash](https://unsplash.com/) (used as temporary placeholders) |
+**Every image on the site is a real photo from the resort**, sourced from
+[thesunshineresortkokut.com](https://www.thesunshineresortkokut.com/) and stored locally in `assets/site/`.
 
-> 💡 The `assets/site/` folder contains a full set of real resort photos (rooms, Unseen/Overview gallery).
-> To switch all placeholders to real photos, just point the URLs to the files in this folder.
+| Section | File(s) |
+|---------|---------|
+| **Logo + favicon** | `logo.png`, `favicon.png` |
+| **Hero background** | `home-1.jpg` (Ao Phrao Bay beach at sunset) |
+| **The Experience** | `home-2.jpg` (the colourful "SUNSHINE" garden pots) |
+| **Rooms & Rates** | `seaview-1.jpg`, `garden-1.jpg`, `home-4.jpg` |
+| **Our Story / Location** | `over-10.jpg` (kayaks), `over-2.jpg`, `over-4.jpg` |
+| **Unseen Sunshine gallery** | `unseen-1/2.jpg`, `over-5/7/9.jpg`, `home-3.jpg` |
+
+> 💡 The `assets/site/` folder also contains extra resort photos (`over-1` … `over-10`, `unseen-3`,
+> `seaview-2`, `garden-2`, `family-1/2`) you can swap in at any time.
 
 ---
 
@@ -172,7 +179,6 @@ Uses modern features such as `backdrop-filter`, CSS Grid, and `IntersectionObser
 ## 🔮 Future Improvements
 
 - [ ] Integrate a real booking system (Booking Engine / API)
-- [ ] Replace all placeholders with real resort photos
 - [ ] Add a Thai/English language switcher
 - [ ] Add a Google Maps embed in the Location section
 - [ ] Add a guest reviews page/section
