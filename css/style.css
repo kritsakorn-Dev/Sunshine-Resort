@@ -212,8 +212,8 @@ section{position:relative}
 .lightbox-close{position:absolute;top:24px;right:30px;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
 
 /* ============ TOAST ============ */
-.toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,140%);background:var(--accent);color:#fff;padding:15px 28px;border-radius:50px;font-size:.9rem;letter-spacing:.02em;z-index:9600;box-shadow:0 14px 40px rgba(207,68,56,.45);transition:transform .5s var(--ease);max-width:90vw;text-align:center}
-.toast.show{transform:translate(-50%,0)}
+.toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,200%);opacity:0;visibility:hidden;pointer-events:none;background:var(--accent);color:#fff;padding:15px 28px;border-radius:50px;font-size:.9rem;letter-spacing:.02em;z-index:9600;box-shadow:0 14px 40px rgba(207,68,56,.45);transition:transform .5s var(--ease),opacity .4s ease,visibility .4s;max-width:90vw;text-align:center}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto}
 
 /* ============ REVEAL ============ */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
