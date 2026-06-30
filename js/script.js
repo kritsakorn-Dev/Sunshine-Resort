@@ -146,7 +146,7 @@
       1,
       Math.round((new Date(checkout.value) - new Date(checkin.value)) / 86400000)
     );
-    showToast(`✅ ${room} is available! ${nights} night(s) — our team will contact you to confirm`);
+    showToast(`${room} is available! ${nights} night(s) — our team will contact you to confirm`);
   });
 
   $("#searchPill")?.addEventListener("click", () => {
