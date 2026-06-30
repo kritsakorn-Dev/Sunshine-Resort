@@ -76,6 +76,16 @@ section{position:relative}
   transition:background .4s,box-shadow .4s,border-color .4s;
 }
 .nav.scrolled .nav-pill{background:rgba(12,13,16,.78);border-color:rgba(255,255,255,.10)}
+/* Light mode: once scrolled away from the hero, the pill turns to white glass */
+[data-theme="light"] .nav.scrolled .nav-pill{background:rgba(255,255,255,.82);border-color:rgba(20,20,25,.10);box-shadow:0 14px 40px rgba(0,0,0,.12)}
+[data-theme="light"] .nav.scrolled .nav-links a{color:rgba(28,26,24,.72)}
+[data-theme="light"] .nav.scrolled .nav-links a:hover,
+[data-theme="light"] .nav.scrolled .nav-links a.active{color:#16140f}
+[data-theme="light"] .nav.scrolled .nav-search,
+[data-theme="light"] .nav.scrolled .nav-theme{border-color:rgba(20,20,25,.18);color:#1d1c1a}
+[data-theme="light"] .nav.scrolled .nav-search:hover,
+[data-theme="light"] .nav.scrolled .nav-theme:hover{background:rgba(20,20,25,.06)}
+[data-theme="light"] .nav.scrolled .burger span{background:#1d1c1a}
 .brand{display:flex;align-items:center}
 .brand-logo{height:42px;width:auto;display:block}
 .nav-links{display:flex;gap:30px}
@@ -265,6 +275,8 @@ section{position:relative}
   }
   .nav-links.open{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
   .nav-links a{padding:10px 14px;text-align:center}
+  [data-theme="light"] .nav-links{background:rgba(255,255,255,.95);border-color:rgba(20,20,25,.10);box-shadow:0 20px 50px rgba(0,0,0,.14)}
+  [data-theme="light"] .nav-links a{color:#1d1c1a}
   .burger{display:flex}
   .nav-cta{display:none}
   .booking-card{flex-wrap:wrap;border-radius:24px;padding:18px}
