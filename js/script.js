@@ -54,35 +54,6 @@
     io.observe(el);
   });
 
-  /* ---------- Animated counters ---------- */
-  const counters = $$(".count");
-  const cObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const target = parseFloat(el.dataset.target);
-        const suffix = el.dataset.suffix || "";
-        const isFloat = String(el.dataset.target).includes(".") || suffix === ".4";
-        let cur = 0;
-        const step = target / 60;
-        const tick = () => {
-          cur += step;
-          if (cur >= target) {
-            el.textContent = (suffix === ".4" ? "9.4" : target) + (suffix && suffix !== ".4" ? suffix : "");
-            return;
-          }
-          el.textContent = Math.floor(cur) + (suffix && suffix !== ".4" ? suffix : "");
-          requestAnimationFrame(tick);
-        };
-        tick();
-        cObserver.unobserve(el);
-      });
-    },
-    { threshold: 0.5 }
-  );
-  counters.forEach((c) => cObserver.observe(c));
-
   /* ---------- Active nav link via section observer ---------- */
   const navLinks = $$(".nav-links a");
   const sections = navLinks
@@ -117,35 +88,13 @@
     }
   });
 
-  /* ---------- Custom cursor ---------- */
-  const dot = $("#cursorDot");
-  const ring = $("#cursorRing");
-  if (window.matchMedia("(hover:hover)").matches) {
-    let rx = 0, ry = 0, dx = 0, dy = 0;
-    window.addEventListener("mousemove", (e) => {
-      dx = e.clientX; dy = e.clientY;
-      dot.style.transform = `translate(${dx}px,${dy}px) translate(-50%,-50%)`;
-    });
-    const follow = () => {
-      rx += (dx - rx) * 0.18;
-      ry += (dy - ry) * 0.18;
-      ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
-      requestAnimationFrame(follow);
-    };
-    follow();
-    $$("a,button,[data-tilt],.g-item,[data-magnetic]").forEach((el) => {
-      el.addEventListener("mouseenter", () => ring.classList.add("grow"));
-      el.addEventListener("mouseleave", () => ring.classList.remove("grow"));
-    });
-  }
-
   /* ---------- 3D tilt on room cards ---------- */
   $$("[data-tilt]").forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const r = card.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
       const py = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(800px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateY(-6px)`;
+      card.style.transform = `perspective(1000px) rotateY(${px * 3.5}deg) rotateX(${-py * 3.5}deg) translateY(-5px)`;
     });
     card.addEventListener("mouseleave", () => (card.style.transform = ""));
   });

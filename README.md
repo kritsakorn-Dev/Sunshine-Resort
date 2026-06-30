@@ -31,7 +31,7 @@ All photography uses the **resort's own real images**.
 | **Markup** | HTML5 | Semantic tags (`header`, `section`, `nav`, `figure`, `footer`) |
 | **Styling** | CSS3 | Custom Properties (`:root` variables), Flexbox, CSS Grid, `backdrop-filter`, Keyframe Animations |
 | **Behavior** | JavaScript (Vanilla ES6+) | No framework / no external libraries |
-| **Fonts** | Google Fonts | `Playfair Display` (serif headings), `Jost` (sans body/nav) |
+| **Fonts** | Google Fonts | `Fraunces` (modern serif headings), `Manrope` (sans body/nav) |
 | **Images** | 100% real resort photos | See [Image Sources](#-image-sources) |
 
 **Not used:** Node.js, npm, bundlers (Webpack/Vite), CSS frameworks (Bootstrap/Tailwind) or JS frameworks (React/Vue).
@@ -51,19 +51,16 @@ This keeps the project **lightweight, easy to run, and easy to maintain.**
 7. **Footer / Contact** — Real logo, address, Quick Links, Legal, reservations, and social icons
 
 ### Interactions — found in `js/script.js`
-- 🖱️ **Custom Cursor** — A custom cursor (dot + ring following the mouse)
-- ⏳ **Page Loader** — Loading screen with a sun animation
+- ⏳ **Page Loader** — Loading screen with the floating resort logo
 - 📊 **Scroll Progress Bar** — Progress bar at the top showing scroll position
-- 🎬 **Reveal on Scroll** — Content fades in as you scroll (`IntersectionObserver`)
-- 🏔️ **Parallax** — Backgrounds move at different speeds to add depth
-- 🔢 **Animated Counters** — Stat numbers count up when scrolled into view
+- 🎬 **Reveal on Scroll** — Content fades in gently as you scroll (`IntersectionObserver`)
+- 🏔️ **Parallax** — Hero background drifts at a different speed to add depth
 - 🎯 **Active Nav Highlight** — Menu highlights the section currently in view
-- 🧲 **Magnetic Buttons** — Buttons that attract toward the cursor
-- 🃏 **3D Tilt Cards** — Room cards tilt based on cursor position
+- 🃏 **Subtle 3D Tilt** — Room cards tilt slightly toward the cursor
 - 🖼️ **Lightbox** — Open gallery images full-size (close with button / backdrop click / `Esc`)
-- 🔔 **Toast Notification** — Alerts when checking room availability
+- 🔔 **Toast Notification** — Confirmation when checking room availability
 - 📅 **Booking Logic** — Validates dates + calculates the number of nights automatically
-- 📱 **Responsive + Mobile Menu** — Hamburger menu that slides in from the side
+- 📱 **Responsive + Mobile Menu** — Glass dropdown menu on smaller screens
 
 ---
 
