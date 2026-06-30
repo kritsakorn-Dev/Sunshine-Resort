@@ -13,6 +13,21 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  /* ---------- Dark / light theme ---------- */
+  const root = document.documentElement;
+  const metaTheme = $('meta[name="theme-color"]');
+  const applyTheme = (mode) => {
+    root.setAttribute("data-theme", mode);
+    if (metaTheme) metaTheme.content = mode === "light" ? "#f7f4ee" : "#0c0d10";
+  };
+  // The inline head script already set the initial attribute; keep the meta in sync.
+  applyTheme(root.getAttribute("data-theme") || "dark");
+  $("#themeToggle")?.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    applyTheme(next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+
   /* ---------- Loader ---------- */
   window.addEventListener("load", () => {
     setTimeout(() => $("#loader")?.classList.add("done"), 900);

@@ -60,6 +60,7 @@ This keeps the project **lightweight, easy to run, and easy to maintain.**
 - 🖼️ **Lightbox** — Open gallery images full-size (close with button / backdrop click / `Esc`)
 - 🔔 **Toast Notification** — Confirmation when checking room availability
 - 📅 **Booking Logic** — Validates dates + calculates the number of nights automatically
+- 🌗 **Dark / Light Mode** — Toggle in the navbar; the choice is saved to `localStorage` and applied before first paint (no flash). Light mode leans into the bright "Sunshine" beach brand
 - 📱 **Responsive + Mobile Menu** — Glass dropdown menu on smaller screens
 
 ---
@@ -122,7 +123,8 @@ npx http-server -p 8000
 ## 🎨 Customization
 
 ### Change the theme colors
-Edit the variables in the `:root` block of `css/style.css`:
+The site ships with **two themes**. Edit the dark palette in the `:root` block of `css/style.css`,
+and the light palette in the `[data-theme="light"]` block right below it:
 
 ```css
 :root{
