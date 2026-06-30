@@ -32,7 +32,7 @@ section{position:relative}
   font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
   font-weight:500;color:var(--accent);margin-bottom:18px;
 }
-.eyebrow.light{color:var(--gold)}
+.eyebrow.light{color:var(--accent)}
 .muted{color:var(--muted)}
 
 /* ============ LOADER ============ */
@@ -80,7 +80,7 @@ section{position:relative}
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ============ BUTTONS ============ */
-.btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;border-radius:50px;border:1px solid transparent;transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .3s;will-change:transform}
+.btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;border-radius:50px;border:1px solid transparent;transition:background .3s,color .3s,box-shadow .3s}
 .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 26px rgba(207,68,56,.32)}
 .btn-primary:hover{background:var(--accent-dark);box-shadow:0 14px 34px rgba(207,68,56,.45)}
 .link-arrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--accent);transition:gap .3s,color .3s}
@@ -117,8 +117,7 @@ section{position:relative}
 /* ============ SECTION HEAD ============ */
 .section-head{max-width:var(--maxw);margin:0 auto;padding:120px 20px 50px}
 .section-head.center{text-align:center;max-width:680px}
-.display.section-title,.section-head .display{font-size:clamp(2.4rem,5vw,3.6rem)}
-.section-head h2{font-size:clamp(2.4rem,5vw,3.6rem)}
+.section-head .display,.section-head h2{font-size:clamp(2.4rem,5vw,3.6rem)}
 .section-note{color:var(--muted);margin-top:16px;font-size:1rem}
 
 /* ============ THE EXPERIENCE ============ */
@@ -219,12 +218,17 @@ section{position:relative}
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 
+/* Respect users who prefer reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+
 /* ============ RESPONSIVE ============ */
 @media(max-width:980px){
   .exp-grid,.story-top,.story-bottom{grid-template-columns:1fr;gap:40px}
   .exp-media{order:-1}
   .exp-media img{height:380px}
-  .exp-badge{left:auto;right:20px;bottom:-22px}
   .room-grid{grid-template-columns:1fr 1fr}
   .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:210px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:40px}

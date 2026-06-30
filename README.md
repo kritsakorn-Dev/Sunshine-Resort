@@ -44,7 +44,7 @@ This keeps the project **lightweight, easy to run, and easy to maintain.**
 ### Page Sections
 1. **Hero** — Centered "Escape to Paradise" serif headline over a real beach photo, with parallax and an overlapping booking bar
 2. **Booking Bar** — Pick check-in/check-out dates, guests, and room type, then Search
-3. **The Experience** — Editorial two-column intro with the real "SUNSHINE" garden photo and a "950 m beach" badge (animated counter)
+3. **The Experience** — Editorial two-column intro with the real "SUNSHINE" garden photo
 4. **Rooms & Rates** — Three room cards (Single Seaview, Garden View, Family) with real interiors and a 3D tilt effect
 5. **Our Story / Location** — Family heritage story, island-life details, and pier distances with real photos
 6. **Unseen Sunshine (Gallery)** — Masonry image grid; click to view full-size images (Lightbox)
@@ -126,12 +126,13 @@ Edit the variables in the `:root` block of `css/style.css`:
 
 ```css
 :root{
-  --bg:#0e0f12;                              /* main background color */
-  --text:#f4f5f7;                            /* text color */
-  --accent:#ff4332;                          /* primary color (sunset red) */
-  --accent-2:#ff8a3d;                        /* secondary color (orange) */
-  --accent-grad:linear-gradient(120deg,#ff4332,#ff8a3d);  /* gradient */
-  --radius:18px;                             /* corner roundness */
+  --bg:#0c0d10;            /* near-black section background */
+  --text:#f3f1ec;          /* warm off-white text */
+  --accent:#cf4438;        /* sunset red (buttons, links) */
+  --gold:#d9a441;          /* warm gold detail */
+  --serif:"Fraunces";      /* display headings */
+  --sans:"Manrope";        /* body & navigation */
+  --radius:6px;            /* corner roundness */
 }
 ```
 
@@ -169,7 +170,8 @@ Edit directly in `index.html` (text, prices, contact info, etc.)
 Supports all modern browsers (Chrome, Edge, Firefox, Safari).
 Uses modern features such as `backdrop-filter`, CSS Grid, and `IntersectionObserver`.
 - ✅ Desktop & Mobile (fully responsive across all screen sizes)
-- ✅ The custom cursor only appears on devices with a mouse (`hover:hover`) — it's disabled automatically on mobile
+- ✅ Hover effects (3D tilt) only run on devices with a real pointer (`hover:hover`)
+- ✅ Honours `prefers-reduced-motion` — animations and parallax are disabled for users who prefer less motion
 
 ---
 
@@ -179,8 +181,8 @@ Uses modern features such as `backdrop-filter`, CSS Grid, and `IntersectionObser
 - [ ] Add a Thai/English language switcher
 - [ ] Add a Google Maps embed in the Location section
 - [ ] Add a guest reviews page/section
-- [ ] Complete SEO and Open Graph meta tags
-- [ ] Optimize images (convert to WebP / lazy-load)
+- [ ] Add JSON-LD structured data for richer SEO
+- [ ] Convert images to WebP/AVIF for even faster loading
 
 ---
 

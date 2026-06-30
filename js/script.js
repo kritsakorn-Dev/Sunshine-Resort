@@ -5,21 +5,34 @@
   "use strict";
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const escapeHtml = (s) =>
+    s.replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+    );
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
   /* ---------- Loader ---------- */
   window.addEventListener("load", () => {
     setTimeout(() => $("#loader")?.classList.add("done"), 900);
   });
 
-  /* ---------- Scroll progress + nav state ---------- */
+  /* ---------- Scroll progress + nav state (rAF-throttled) ---------- */
   const nav = $("#nav");
   const progress = $("#scrollProgress");
+  let ticking = false;
   const onScroll = () => {
-    const h = document.documentElement;
-    const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-    progress.style.width = scrolled * 100 + "%";
-    nav.classList.toggle("scrolled", h.scrollTop > 40);
-    parallax();
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      progress.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + "%";
+      nav.classList.toggle("scrolled", doc.scrollTop > 40);
+      if (!prefersReducedMotion) parallax();
+      ticking = false;
+    });
   };
   window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -35,7 +48,7 @@
       el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0) scale(1.12)`;
     });
   }
-  parallax();
+  if (!prefersReducedMotion) parallax();
 
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver(
@@ -88,16 +101,18 @@
     }
   });
 
-  /* ---------- 3D tilt on room cards ---------- */
-  $$("[data-tilt]").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const r = card.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(1000px) rotateY(${px * 3.5}deg) rotateX(${-py * 3.5}deg) translateY(-5px)`;
+  /* ---------- Subtle 3D tilt on room cards ---------- */
+  if (!prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+    $$("[data-tilt]").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(1000px) rotateY(${px * 3.5}deg) rotateX(${-py * 3.5}deg) translateY(-5px)`;
+      });
+      card.addEventListener("mouseleave", () => (card.style.transform = ""));
     });
-    card.addEventListener("mouseleave", () => (card.style.transform = ""));
-  });
+  }
 
   /* ---------- Lightbox ---------- */
   const lightbox = $("#lightbox");
@@ -139,7 +154,7 @@
   $("#checkBtn")?.addEventListener("click", () => {
     const room = $("#roomtype").value;
     if (!checkin.value || !checkout.value) {
-      showToast("⚠ Please select your check-in and check-out dates");
+      showToast("Please select your check-in and check-out dates.");
       return;
     }
     const nights = Math.max(
@@ -178,7 +193,7 @@
               `<li><a href="${it.target}" data-search-link><span class="r-title">${it.title}</span><span class="r-desc">${it.desc}</span></a></li>`
           )
           .join("")
-      : `<li class="search-empty">No results for “${q}”. Try “rooms”, “gallery” or “location”.</li>`;
+      : `<li class="search-empty">No results for “${escapeHtml(q)}”. Try “rooms”, “gallery” or “location”.</li>`;
   };
 
   const openSearch = () => {

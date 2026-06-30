@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Sunshine Resort · Koh Kood</title>
   <meta name="description" content="The Sunshine Resort — a beachfront sanctuary on Ao Phrao Bay, Koh Kood, Trat. Crystal-clear water, a 950-metre white sand beach, and untouched tropical wilderness." />
+  <meta name="theme-color" content="#0c0d10" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Sunshine Resort · Koh Kood" />
+  <meta property="og:description" content="A family-run beachfront hideaway on Ao Phrao Bay, Koh Kood — 950 metres of soft white sand." />
+  <meta property="og:image" content="assets/site/home-1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/site/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +44,7 @@
       </nav>
       <div class="nav-right">
         <button class="nav-search" id="searchPill" aria-label="search">
-          <svg viewBox="0 0 24 24" width="17" height="17"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="17" height="17"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
         <a href="#booking" class="btn btn-primary nav-cta">Book Now</a>
         <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
@@ -67,17 +73,17 @@
     <div class="booking" id="booking">
       <div class="booking-card reveal">
         <div class="booking-field">
-          <label>Check In</label>
+          <label for="checkin">Check In</label>
           <input type="date" id="checkin" />
         </div>
         <span class="booking-divider"></span>
         <div class="booking-field">
-          <label>Check Out</label>
+          <label for="checkout">Check Out</label>
           <input type="date" id="checkout" />
         </div>
         <span class="booking-divider"></span>
         <div class="booking-field">
-          <label>Guests</label>
+          <label for="guests">Guests</label>
           <select id="guests">
             <option>1 Adult</option>
             <option selected>2 Adults</option>
@@ -87,7 +93,7 @@
         </div>
         <span class="booking-divider"></span>
         <div class="booking-field">
-          <label>Room</label>
+          <label for="roomtype">Room</label>
           <select id="roomtype">
             <option>Single Seaview</option>
             <option>Garden View</option>
@@ -96,7 +102,7 @@
         </div>
         <button class="btn btn-primary booking-btn" id="checkBtn">
           Search
-          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
@@ -119,11 +125,11 @@
           natural setting nestled among coconut groves and untouched jungle beyond.
         </p>
         <a href="#rooms" class="link-arrow reveal">Discover More
-          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
       <div class="exp-media reveal">
-        <img src="assets/site/home-2.jpg" alt="Colourful SUNSHINE pots in the resort garden" />
+        <img src="assets/site/home-2.jpg" alt="Colourful SUNSHINE pots in the resort garden" loading="lazy" />
       </div>
     </div>
   </section>
@@ -138,34 +144,34 @@
 
     <div class="room-grid">
       <article class="room-card reveal" data-tilt>
-        <div class="room-media"><img src="assets/site/seaview-1.jpg" alt="Single Seaview Room" /></div>
+        <div class="room-media"><img src="assets/site/seaview-1.jpg" alt="Single Seaview Room" loading="lazy" /></div>
         <div class="room-body">
           <div class="room-top"><h3>Single Seaview</h3><span class="price">฿1,500<small>/night</small></span></div>
           <p>40–70 m from the beach · King size bed · Extra bed available</p>
           <a href="#booking" class="link-arrow">Reserve
-            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </article>
 
       <article class="room-card reveal" data-tilt>
-        <div class="room-media"><img src="assets/site/garden-1.jpg" alt="Garden View Room" /></div>
+        <div class="room-media"><img src="assets/site/garden-1.jpg" alt="Garden View Room" loading="lazy" /></div>
         <div class="room-body">
           <div class="room-top"><h3>Garden View</h3><span class="price">฿1,200<small>/night</small></span></div>
           <p>30 sq.m. · Garden-view balcony · King or Twin bed</p>
           <a href="#booking" class="link-arrow">Reserve
-            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </article>
 
       <article class="room-card reveal" data-tilt>
-        <div class="room-media"><img src="assets/site/home-4.jpg" alt="Family Room" /></div>
+        <div class="room-media"><img src="assets/site/home-4.jpg" alt="Family Room" loading="lazy" /></div>
         <div class="room-body">
           <div class="room-top"><h3>Family Room</h3><span class="price">฿2,200<small>/night</small></span></div>
           <p>34 sq.m. · Sleeps 3 guests · King + Single bed</p>
           <a href="#booking" class="link-arrow">Reserve
-            <svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </article>
@@ -176,7 +182,7 @@
   <section class="story" id="location">
     <div class="story-top">
       <div class="story-media reveal">
-        <img src="assets/site/over-10.jpg" alt="Kayaks resting on Ao Phrao beach" />
+        <img src="assets/site/over-10.jpg" alt="Kayaks resting on Ao Phrao beach" loading="lazy" />
       </div>
       <div class="story-copy reveal">
         <p class="eyebrow">Island Life</p>
@@ -193,7 +199,7 @@
       </div>
     </div>
 
-    <div class="story-bottom" id="story">
+    <div class="story-bottom">
       <div class="story-text reveal">
         <h2 class="display">Our Story</h2>
         <p>
@@ -204,8 +210,8 @@
         </p>
       </div>
       <div class="story-thumbs reveal">
-        <img src="assets/site/over-2.jpg" alt="Garden bungalow surrounded by greenery" data-lightbox="assets/site/over-2.jpg" />
-        <img src="assets/site/over-4.jpg" alt="Beachfront restaurant terrace" data-lightbox="assets/site/over-4.jpg" />
+        <img src="assets/site/over-2.jpg" alt="Garden bungalow surrounded by greenery" data-lightbox="assets/site/over-2.jpg" loading="lazy" />
+        <img src="assets/site/over-4.jpg" alt="Beachfront restaurant terrace" data-lightbox="assets/site/over-4.jpg" loading="lazy" />
       </div>
     </div>
   </section>
@@ -236,14 +242,14 @@
         <p class="footer-addr">62/3 The Sunshine Resort, Ko Kood Island, Trat, Thailand.</p>
         <p class="footer-note">A perfect beachfront location with direct access to a beautiful 950-metre long white sand beach.</p>
         <div class="socials">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" width="17" height="17"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
           </a>
-          <a href="https://m.me/" target="_blank" rel="noopener" aria-label="Messenger">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.98-.87a.86.86 0 0 1 .57-.04c.91.25 1.88.39 2.8.39 5.64 0 10-4.13 10-9.71C22 6.13 17.64 2 12 2zm6 7.46-2.93 4.66c-.47.74-1.47.93-2.18.4l-2.33-1.75a.6.6 0 0 0-.72 0l-3.15 2.39c-.42.32-.97-.18-.69-.63l2.93-4.66c.47-.74 1.47-.93 2.18-.4l2.33 1.75c.21.16.51.16.72 0l3.15-2.39c.42-.32.97.18.69.63z"/></svg>
+          <a href="https://m.me/" target="_blank" rel="noopener noreferrer" aria-label="Messenger">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" width="17" height="17"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.98-.87a.86.86 0 0 1 .57-.04c.91.25 1.88.39 2.8.39 5.64 0 10-4.13 10-9.71C22 6.13 17.64 2 12 2zm6 7.46-2.93 4.66c-.47.74-1.47.93-2.18.4l-2.33-1.75a.6.6 0 0 0-.72 0l-3.15 2.39c-.42.32-.97-.18-.69-.63l2.93-4.66c.47-.74 1.47-.93 2.18-.4l2.33 1.75c.21.16.51.16.72 0l3.15-2.39c.42-.32.97.18.69.63z"/></svg>
           </a>
-          <a href="https://line.me/" target="_blank" rel="noopener" aria-label="LINE">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 2C6.48 2 2 5.65 2 10.13c0 4.02 3.55 7.39 8.35 8.03.32.07.77.21.88.49.1.25.06.65.03.91l-.14.85c-.04.26-.2 1.02.89.56 1.09-.46 5.86-3.45 7.99-5.91C21.36 13.86 22 12.07 22 10.13 22 5.65 17.52 2 12 2zM8.3 12.62H6.36a.51.51 0 0 1-.51-.51V8.23c0-.28.23-.51.51-.51s.51.23.51.51v3.37H8.3c.29 0 .52.23.52.51s-.23.51-.52.51zm2.02-.51c0 .28-.23.51-.51.51a.51.51 0 0 1-.51-.51V8.23c0-.28.23-.51.51-.51s.51.23.51.51zm4.54 0c0 .22-.14.41-.35.48a.5.5 0 0 1-.57-.18l-1.99-2.71v2.41c0 .28-.23.51-.52.51a.51.51 0 0 1-.51-.51V8.23c0-.22.14-.41.35-.48a.52.52 0 0 1 .57.18l2 2.71V8.23c0-.28.22-.51.51-.51s.51.23.51.51zm3.28-2.43c.28 0 .51.23.51.51s-.23.51-.51.51h-1.43v.9h1.43c.28 0 .51.23.51.51s-.23.52-.51.52h-1.94a.51.51 0 0 1-.51-.52V8.23c0-.28.23-.51.51-.51h1.94c.28 0 .51.23.51.51s-.23.51-.51.51h-1.43v.9z"/></svg>
+          <a href="https://line.me/" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" width="17" height="17"><path d="M12 2C6.48 2 2 5.65 2 10.13c0 4.02 3.55 7.39 8.35 8.03.32.07.77.21.88.49.1.25.06.65.03.91l-.14.85c-.04.26-.2 1.02.89.56 1.09-.46 5.86-3.45 7.99-5.91C21.36 13.86 22 12.07 22 10.13 22 5.65 17.52 2 12 2zM8.3 12.62H6.36a.51.51 0 0 1-.51-.51V8.23c0-.28.23-.51.51-.51s.51.23.51.51v3.37H8.3c.29 0 .52.23.52.51s-.23.51-.52.51zm2.02-.51c0 .28-.23.51-.51.51a.51.51 0 0 1-.51-.51V8.23c0-.28.23-.51.51-.51s.51.23.51.51zm4.54 0c0 .22-.14.41-.35.48a.5.5 0 0 1-.57-.18l-1.99-2.71v2.41c0 .28-.23.51-.52.51a.51.51 0 0 1-.51-.51V8.23c0-.22.14-.41.35-.48a.52.52 0 0 1 .57.18l2 2.71V8.23c0-.28.22-.51.51-.51s.51.23.51.51zm3.28-2.43c.28 0 .51.23.51.51s-.23.51-.51.51h-1.43v.9h1.43c.28 0 .51.23.51.51s-.23.52-.51.52h-1.94a.51.51 0 0 1-.51-.52V8.23c0-.28.23-.51.51-.51h1.94c.28 0 .51.23.51.51s-.23.51-.51.51h-1.43v.9z"/></svg>
           </a>
         </div>
       </div>
@@ -273,7 +279,7 @@
 
     <div class="footer-bottom">
       <span>© 2024 The Sunshine Resort Koh Kood. All rights reserved.</span>
-      <span>Redesigned concept · Inspired by modern luxury travel UI</span>
+      <span>Ao Phrao Bay · Koh Kood, Trat, Thailand</span>
     </div>
   </footer>
 
@@ -282,8 +288,8 @@
     <button class="search-close" id="searchClose" aria-label="close search">✕</button>
     <div class="search-box">
       <div class="search-input-wrap">
-        <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="text" id="searchInput" placeholder="Search rooms, gallery, location…" autocomplete="off" />
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Search rooms, gallery, location…" aria-label="Search the site" autocomplete="off" />
       </div>
       <ul class="search-results" id="searchResults"></ul>
     </div>
