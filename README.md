@@ -2,9 +2,9 @@
 
 A **website redesign** project for [The Sunshine Resort](https://www.thesunshineresortkokut.com/),
 a beachfront resort on Ao Phrao Bay, Koh Kood, Trat. It reimagines the original site as an
-**elegant, editorial luxury experience** — an airy dark theme with **serif display typography**,
-sunset-red accents, a floating glass navigation bar, and plenty of **interactive touches**.
-All photography uses the **resort's own real images**.
+**elegant, editorial luxury experience** — **serif display typography**, sunset-red accents,
+a floating glass navigation bar, **switchable dark / light themes**, and plenty of
+**interactive touches**. All photography uses the **resort's own real images**.
 
 > A **static, single-page website** written in pure HTML + CSS + JavaScript.
 > No build step, no dependencies to install — just open the file and it works.
@@ -30,8 +30,10 @@ All photography uses the **resort's own real images**.
 |-------|-----------|---------|
 | **Markup** | HTML5 | Semantic tags (`header`, `section`, `nav`, `figure`, `footer`) |
 | **Styling** | CSS3 | Custom Properties (`:root` variables), Flexbox, CSS Grid, `backdrop-filter`, Keyframe Animations |
+| **Theming** | CSS variables + `localStorage` | Dual **dark / light** themes via `[data-theme]`, persisted per visitor |
 | **Behavior** | JavaScript (Vanilla ES6+) | No framework / no external libraries |
 | **Fonts** | Google Fonts | `Fraunces` (modern serif headings), `Manrope` (sans body/nav) |
+| **SEO / Social** | Meta tags | `description`, `theme-color`, Open Graph & Twitter Card |
 | **Images** | 100% real resort photos | See [Image Sources](#-image-sources) |
 
 **Not used:** Node.js, npm, bundlers (Webpack/Vite), CSS frameworks (Bootstrap/Tailwind) or JS frameworks (React/Vue).
@@ -60,7 +62,8 @@ This keeps the project **lightweight, easy to run, and easy to maintain.**
 - 🖼️ **Lightbox** — Open gallery images full-size (close with button / backdrop click / `Esc`)
 - 🔔 **Toast Notification** — Confirmation when checking room availability
 - 📅 **Booking Logic** — Validates dates + calculates the number of nights automatically
-- 🌗 **Dark / Light Mode** — Toggle in the navbar; the choice is saved to `localStorage` and applied before first paint (no flash). Light mode leans into the bright "Sunshine" beach brand
+- 🌗 **Dark / Light Mode** — Toggle in the navbar; the choice is saved to `localStorage` and applied before first paint (no flash). Light mode leans into the bright "Sunshine" beach brand, and the floating navbar switches to white glass once you scroll past the hero
+- 🧭 **Smart Navbar** — Floating glass pill that stays readable over the hero photo, then adapts its colour to the active theme as you scroll
 - 📱 **Responsive + Mobile Menu** — Glass dropdown menu on smaller screens
 
 ---
@@ -127,7 +130,7 @@ The site ships with **two themes**. Edit the dark palette in the `:root` block o
 and the light palette in the `[data-theme="light"]` block right below it:
 
 ```css
-:root{
+:root{                     /* DARK theme (default) */
   --bg:#0c0d10;            /* near-black section background */
   --text:#f3f1ec;          /* warm off-white text */
   --accent:#cf4438;        /* sunset red (buttons, links) */
@@ -135,6 +138,12 @@ and the light palette in the `[data-theme="light"]` block right below it:
   --serif:"Fraunces";      /* display headings */
   --sans:"Manrope";        /* body & navigation */
   --radius:6px;            /* corner roundness */
+}
+
+[data-theme="light"]{      /* LIGHT theme */
+  --bg:#f7f4ee;            /* warm off-white background */
+  --text:#1d1c1a;          /* near-black text */
+  --gold:#b07d27;          /* deeper gold for contrast on light */
 }
 ```
 
