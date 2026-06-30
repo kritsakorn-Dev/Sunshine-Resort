@@ -201,14 +201,14 @@
   $("#checkBtn")?.addEventListener("click", () => {
     const room = $("#roomtype").value;
     if (!checkin.value || !checkout.value) {
-      showToast("⚠ กรุณาเลือกวันเช็คอินและเช็คเอาท์");
+      showToast("⚠ Please select your check-in and check-out dates");
       return;
     }
     const nights = Math.max(
       1,
       Math.round((new Date(checkout.value) - new Date(checkin.value)) / 86400000)
     );
-    showToast(`✅ ${room} ว่าง! ${nights} คืน — ทีมงานจะติดต่อกลับเพื่อยืนยัน`);
+    showToast(`✅ ${room} is available! ${nights} night(s) — our team will contact you to confirm`);
   });
 
   $("#searchPill")?.addEventListener("click", () => {
