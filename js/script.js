@@ -149,8 +149,68 @@
     showToast(`${room} is available! ${nights} night(s) — our team will contact you to confirm`);
   });
 
-  $("#searchPill")?.addEventListener("click", () => {
-    $("#booking").scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => $("#checkin")?.focus(), 700);
+  /* ---------- Search overlay ---------- */
+  const searchData = [
+    { title: "Book Now", desc: "Check availability & rates", target: "#booking", keys: "book booking reserve availability check in out date rate" },
+    { title: "Rooms & Rates", desc: "Seaview · Garden · Family", target: "#rooms", keys: "room rooms rate price stay bed seaview garden family single night" },
+    { title: "The Experience", desc: "Ao Phrao Bay · facilities", target: "#experience", keys: "experience facilities beach sand snorkel jungle coconut unseen" },
+    { title: "Our Story & Location", desc: "Family-run since 2009 · piers", target: "#location", keys: "story location history family pier ferry village temple school how to get" },
+    { title: "Unseen Sunshine Gallery", desc: "Photos · night sky · hidden bays", target: "#gallery", keys: "gallery photo photos image unseen night sky star bay sunset" },
+    { title: "Contact Us", desc: "Phone · email · address", target: "#contact", keys: "contact phone email address reservation reservations call message map" },
+  ];
+
+  const searchOverlay = $("#searchOverlay");
+  const searchInput = $("#searchInput");
+  const searchResults = $("#searchResults");
+
+  const renderResults = (q) => {
+    const query = q.trim().toLowerCase();
+    const matches = !query
+      ? searchData
+      : searchData.filter(
+          (it) =>
+            (it.title + " " + it.desc + " " + it.keys).toLowerCase().includes(query)
+        );
+    searchResults.innerHTML = matches.length
+      ? matches
+          .map(
+            (it) =>
+              `<li><a href="${it.target}" data-search-link><span class="r-title">${it.title}</span><span class="r-desc">${it.desc}</span></a></li>`
+          )
+          .join("")
+      : `<li class="search-empty">No results for “${q}”. Try “rooms”, “gallery” or “location”.</li>`;
+  };
+
+  const openSearch = () => {
+    if (!searchOverlay) return;
+    renderResults("");
+    searchOverlay.classList.add("open");
+    setTimeout(() => searchInput?.focus(), 250);
+  };
+  const closeSearch = () => searchOverlay?.classList.remove("open");
+
+  $("#searchPill")?.addEventListener("click", openSearch);
+  $("#searchClose")?.addEventListener("click", closeSearch);
+  searchInput?.addEventListener("input", (e) => renderResults(e.target.value));
+  searchOverlay?.addEventListener("click", (e) => {
+    if (e.target === searchOverlay) closeSearch();
+    const link = e.target.closest("[data-search-link]");
+    if (link) {
+      e.preventDefault();
+      closeSearch();
+      const el = $(link.getAttribute("href"));
+      setTimeout(() => el?.scrollIntoView({ behavior: "smooth" }), 200);
+    }
   });
+  searchInput?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const first = searchResults.querySelector("[data-search-link]");
+      if (first) {
+        closeSearch();
+        const el = $(first.getAttribute("href"));
+        setTimeout(() => el?.scrollIntoView({ behavior: "smooth" }), 200);
+      }
+    }
+  });
+  document.addEventListener("keydown", (e) => e.key === "Escape" && closeSearch());
 })();
